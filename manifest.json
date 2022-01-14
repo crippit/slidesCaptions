@@ -7,7 +7,6 @@
  
   "content_scripts": [{
     "css": ["styles.css"],
-    "js": ["content.js"],
     "matches": ["https://meet.gogole.com/*"]
   }]
  
