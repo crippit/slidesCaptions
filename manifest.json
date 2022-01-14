@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "Chrome Captions",
+  "version": "0.1.0",
+  "description": "Edit the Size of Google Meet Captions",
+ 
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://meet.gogole.com/*"]
+  }]
+ 
+}
