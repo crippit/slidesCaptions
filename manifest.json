@@ -10,4 +10,9 @@
     "matches": ["https://meet.gogole.com/*"]
   }]
  
+  "permissions":[
+    "https://meet.google.com/*",
+    "webNavigation",
+    "declarativeContent"
+  ]
 }
