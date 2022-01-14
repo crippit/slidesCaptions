@@ -8,7 +8,7 @@
   "content_scripts": [{
     "css": ["styles.css"],
     "matches": ["https://meet.gogole.com/*"]
-  }]
+  }],
  
    "permissions":[
     "https://meet.google.com/*",
