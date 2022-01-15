@@ -5,6 +5,9 @@
   "version": "0.2.0",
   "description": "Edit the Size of Google Meet Captions",
  
+  "action": {
+    "default_popup": "popup.html"
+  
   "content_scripts": [{
     "css": ["styles.css"],
     "matches": ["https://meet.google.com/*"]
