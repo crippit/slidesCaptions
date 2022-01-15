@@ -20,7 +20,7 @@
  
    "permissions":[
      
-]
+],
   
  "host_permissions":[
   "https://meet.google.com/*"
