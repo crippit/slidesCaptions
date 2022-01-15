@@ -7,7 +7,8 @@
  
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  
   "content_scripts": [{
     "css": ["styles.css"],
     "matches": ["https://meet.google.com/*"]
