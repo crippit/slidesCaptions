@@ -1,12 +1,12 @@
-document.addEventListener("DOMContentLoaded", documentEvents, false);
+document.addEventListener("DOMContentLoaded", changeSize, false);
 
 
 
-function documentEvents() {
+function changeSize() {
   const clearBtn = document.getElementById("clear");
   const submitBtn = document.getElementById("submit");
   var textSize = document.getElementById("size").value;
-  document.getElementById("outputSize").innerHTML = textSize;
+  document.getElementById("sizeOutput").innerHTML = textSize;
 
   submitBtn.addEventListener("click", () => {
    
