@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", documentEvents, false);
 
+
+
 function documentEvents() {
   const clearBtn = document.getElementById("clear");
   const submitBtn = document.getElementById("submit");
-  const inputTxt = document.getElementById("imgUrlInput");
+  var textSize = document.getElementById("size").value;
+  document.getElementById("outputSize").innerHTML = textSize;
 
   submitBtn.addEventListener("click", () => {
    
