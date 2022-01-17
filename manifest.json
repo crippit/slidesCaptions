@@ -9,8 +9,13 @@
     "default_popup": "popup.html"
   },
   
+  "background": {
+    "service_worker": "scripts.js"
+  },
+  
   "content_scripts": [{
     "css": ["styles.css"],
+    "js": ["popup.js"],
     "matches": ["https://meet.google.com/*"]
   }],
   
@@ -19,7 +24,8 @@
   },
  
    "permissions":[
-     
+     "activeTab",
+     "scripting"
 ],
   
  "host_permissions":[
