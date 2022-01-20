@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", changeSize, false);
-
+//document.addEventListener("DOMContentLoaded", changeSize, false);
+btn.addEventListener("click",changeSize);
 
 
 function changeSize() {
@@ -9,18 +9,18 @@ function changeSize() {
   document.getElementById("sizeOutput").innerHTML = textSize;
   chrome.storage.local.set({key: textSize}, function() {
   console.log('Value is set to ' + textSize);
-});
-
-  submitBtn.addEventListener("click", () => {
-  const css = '.Mz6pEf {font-size: ' + textSize + 'pt !important;}';
-    const tabId = getTabId();
-    chrome.scripting.insertCSS(
+  });
+  const css = '.Mz6pEf {font-size: ' + chosenSize + 'pt !important;}';
+  const tabId = getTabId();
+  chrome.scripting.insertCSS(
     {
       target: {tabId: tabId},
       css: css,
     },
     () => { ... });
-    });
+
+  submitBtn.addEventListener("click", () => {
+  
   });
 
    
