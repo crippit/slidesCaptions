@@ -11,7 +11,14 @@ function changeSize() {
   console.log('Value is set to ' + textSize);
 });
   submitBtn.addEventListener("click", () => {
-   
+    const css = '.Mz6pEf {font-size: ' + textSize + 'pt !important;}';
+    const tabId = getTabId();
+    chrome.scripting.insertCSS(
+    {
+      target: {tabId: tabId},
+      css: css,
+    },
+    () => { ... });
     });
 
    
