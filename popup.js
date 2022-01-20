@@ -10,8 +10,9 @@ function changeSize() {
   chrome.storage.local.set({key: textSize}, function() {
   console.log('Value is set to ' + textSize);
 });
+
   submitBtn.addEventListener("click", () => {
-    const css = '.Mz6pEf {font-size: ' + textSize + 'pt !important;}';
+  const css = '.Mz6pEf {font-size: ' + textSize + 'pt !important;}';
     const tabId = getTabId();
     chrome.scripting.insertCSS(
     {
@@ -20,6 +21,7 @@ function changeSize() {
     },
     () => { ... });
     });
+  });
 
    
 
