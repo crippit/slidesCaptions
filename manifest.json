@@ -2,7 +2,7 @@
   "manifest_version": 3,
  
   "name": "Chrome Captions",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Edit the Size of Google Meet Captions",
  
   "action": {
