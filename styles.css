@@ -1,5 +1,6 @@
 .captions-size-large {
-    --captions-num-lines: 10 !important;
+    --captions-num-lines: 6 !important;
+    --captions-font-size: 50px !important;
 }
 
 .punch-viewer-captions-viewer-height-consumer {
