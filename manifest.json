@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
  
-  "name": "Slides Captions Beta",
-  "version": "0.7.1",
+  "name": "Slides Captions",
+  "version": "0.8.0",
   "description": "Make Google Slides Captions Multi Line",
  
   "action": {
