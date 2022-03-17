@@ -1,12 +1,15 @@
-.captions-size-large {
+.captions-overlay-content {
     --captions-num-lines: 6 !important;
     --captions-font-size: 50px !important;
 }
 
 .punch-viewer-captions-viewer-height-consumer {
     height: 100% !important;
-    left: 0 !important;
     width: 100% !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
 }
 
 .punch-viewer-page-wrapper-container {
