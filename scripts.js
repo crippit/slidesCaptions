@@ -1,10 +1,7 @@
-function injectCSS() {
-
-const tabId = getTabId();
-chrome.scripting.insertCSS(
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting.insertCSS(
     {
-      target: {tabId: tabId},
+      target: {tabId: tab.id},
       files: ["./styles.css"],
     },);
-          
-}
+})
