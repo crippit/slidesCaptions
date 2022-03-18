@@ -6,28 +6,23 @@
   "description": "Make Google Slides Captions Multi Line",
  
   "action": {
-    "default_popup": "popup.html"
+    "default_title": "Click to enable large captions"
   },
   
   "background": {
     "service_worker": "scripts.js"
   },
   
-  "content_scripts": [{
-    "css": ["styles.css"],
-    "matches": ["https://docs.google.com/*"]
-  }],
-  
   "icons": {
     "128": "icon128.png"
   },
  
    "permissions":[
-     "scripting"
+     "activeTab", "scripting"
 ],
   
  "host_permissions":[
-  "https://docs.google.com/*"
+    "https://docs.google.com/presentation/*"
   ]
  
 }
