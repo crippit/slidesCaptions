@@ -1,3 +1,9 @@
+chrome.runtime.onInstalled.addListener(({ reason, version }) => {
+  if (reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    showReadme();
+  }
+});
+
 chrome.action.onClicked.addListener(async (tab) => {
   console.log('tab', tab);
   const title = await chrome.action.getTitle({tabId: tab.id});
@@ -18,7 +24,12 @@ chrome.action.onClicked.addListener(async (tab) => {
         files: ["./styles.css"],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
-    chrome.action.setBadgeText({text: (' ')});
+    chrome.action.setBadgeText({text: ('')});
     chrome.action.setBadgeBackgroundColor({color: 'red'});
   }
 });
+
+function showReadme(info, tab) {
+  let url = chrome.runtime.getURL("readme.html");
+  chrome.tabs.create({ url });
+}
