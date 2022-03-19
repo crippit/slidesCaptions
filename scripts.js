@@ -8,7 +8,9 @@ chrome.action.onClicked.addListener(async (tab) => {
         files: ["./styles.css"],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Large captions are enabled'});
-  } else {
+    chrome.action.setBadgeBackgroundColor({color: '#00FF00'},() => { /*...*/ });
+  } 
+  else {
     chrome.scripting.removeCSS(
       {
         target: {tabId: tab.id},
