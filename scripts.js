@@ -8,7 +8,8 @@ chrome.action.onClicked.addListener(async (tab) => {
         files: ["./styles.css"],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Large captions are enabled'});
-    chrome.action.setBadgeBackgroundColor({color: '#00FF00'},() => { /*...*/ });
+    chrome.action.setBadgeText({text: ('ON')});
+    chrome.action.setBadgeBackgroundColor({color: 'green'});
   } 
   else {
     chrome.scripting.removeCSS(
@@ -17,5 +18,7 @@ chrome.action.onClicked.addListener(async (tab) => {
         files: ["./styles.css"],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
+    chrome.action.setBadgeText({text: (' ')});
+    chrome.action.setBadgeBackgroundColor({color: 'red'});
   }
 });
