@@ -1,33 +1,46 @@
 <html>
   <head>
+    <style>
+      body {font-family: Sans-serif;}
+      h2 {font-family: Sans-serif;}
+    </style>
     <title>Slides Captions Setting</title>
   </head>
   <body>
     <div>
       <h2>Welcome to Slides Captions</h2>
+    </div>
+
+    <div id="font-size">
+      <label for="font-size">Choose your Caption Size:</label>
+      <select id="font-size" name="font-size">
+        <option value="12">Small</option>
+        <option value="16">Medium</option>
+        <option value="24">Large</option>
+        <option value="32">Extra Large</option>
+        <option value="64">Giant</option>
+      </select>
+    </div>
+   
+    <div id="font-color">
+      <label for="font-color">Choose your Caption colour:</label>
+      <input type="color" id="font-color">
 
     </div>
 
-    <div style="width: 300px;">
-    <p>Slides Captions forces your Google Slides captions into multiple lines. It only works when the font size is set to Large in Google Slides Caption Settings.</p>
-    <p>To use the extension you must
-      <ul>
-        <li>Ensure that your captions are set to appear at the top and in large text</li>
-        <li>Load your presentation in presentation view, exit full screen and then reload the presentation - alternatively change the end of your URL to /present</li>
-        <li>Toggle your captions on, once the screen is black</li>
-      </ul>
+    <div id="font">
+      <label for="font">Choose your Caption colour:</label>
+      <select id="font" name="font">
+        <option value="default">Default</option>
+        <option value="lexend">Lexend</option>
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+      </select>
+    </div>
 
-    </p>
-    <p>The extension will stop your slides from presenting. Disable the extension by clicking below</p>
-    <p>You can re-enable the extension from chrome://extensions</p>
-    </div>
-<br/>
-    <div>
-      <button id="disable">Disable Extension</button>
-    </div>
-    <br/>
-    <p>How to enable - Instructions are in the captions</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/rCDylLmroAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="status"></div>
+<button id="save">Save</button>
+
   </body>
-  <script src="popup.js"></script>
+  <script src="options.js"></script>
   </html>
