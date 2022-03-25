@@ -14,32 +14,37 @@
     <script defer src="options.js"></script>
 
     <form id="optionsForm">
-    <div id="fontSize">
-      <label for="fontSize">Choose your Caption Size:</label>
-      <select id="fontSize">
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-        <option value="extra-large">Extra Large</option>
-        <option value="giant">Giant</option>
-      </select>
-    </div>
-   
-    <div id="fontColor">
-      <label for="fontColor">Choose your Caption colour:</label>
-      <input type="color" id="font-color">
+      
+      <div>
+        <label for="fontSize">Choose your Caption Size:</label>
+        <select id="fontSize" key="optionsKey">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+          <option value="x-large">Extra Large</option>
+          <option value="xx-large">Giant</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="fontColor">Choose your Caption colour:</label>
+        <input type="color" id="fontColor" value="#FFFFFF" key="optionsKey">
+      </div>
 
-    </div>
+      <div>
+        <label for="background">Choose your background colour:</label>
+        <input type="color" id="background" value="#000000" key="optionsKey">
+      </div>
 
-    <div id="fontType">
-      <label for="fontType">Choose your Caption colour:</label>
-      <select id="fontType">
-        <option value="default">Default</option>
-        <option value="lexend">Lexend</option>
-        <option value="serif">Serif</option>
-        <option value="sans-serif">Sans-Serif</option>
-      </select>
-    </div>
+      <div>
+        <label for="fontType">Choose your Caption colour:</label>
+        <select id="fontType" key="optionsKey">
+          <option value="default">Default</option>
+          <option value="lexend">Lexend</option>
+          <option value="serif">Serif</option>
+          <option value="sans-serif">Sans-Serif</option>
+        </select>
+      </div>
 
     
     </form>
