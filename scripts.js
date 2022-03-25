@@ -41,5 +41,10 @@ function showReadme(info, tab) {
 async function loadStyles() {
   const data = await chrome.storage.sync.get('optionsKeys');
   console.log('optionsKeys', data.optionsKeys);
+  if (data.optionsKeys) {
+    const savedPrefs = await chrome.storage.sync.get(JSON.parse(data.optionsKeys));
+    console.log('savedPrefs', savedPrefs);
+    
+  }
 
 }
