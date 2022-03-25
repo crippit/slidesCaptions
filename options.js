@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Populate the form with the values loaded from storage
   const inputElements = optionsForm.elements;
   const keys = Array.from(inputElements).map((el) => el.id);
-  chrome.storage.sync.set('optionsKeys', JSON.stringify(keys));
+  chrome.storage.sync.set({['optionsKeys']: JSON.stringify(keys)});
   chrome.storage.sync.get(keys, (data) => {
     Object.entries(data).forEach(([key, value]) => inputElements[key].value = value);
   });

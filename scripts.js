@@ -4,6 +4,10 @@ chrome.runtime.onInstalled.addListener(({ reason, version }) => {
   }
 });
 
+chrome.runtime.onStartup.addListener(async () => {
+  loadStyles();
+}) 
+
 chrome.action.onClicked.addListener(async (tab) => {
   console.log('tab', tab);
   const title = await chrome.action.getTitle({tabId: tab.id});
@@ -34,7 +38,8 @@ function showReadme(info, tab) {
   chrome.tabs.create({ url });
 }
 
-function loadKeys {
-  chrome.storage.sync.get('optionsKeys')
+async function loadStyles() {
+  const data = await chrome.storage.sync.get('optionsKeys');
+  console.log('optionsKeys', data.optionsKeys);
 
 }
