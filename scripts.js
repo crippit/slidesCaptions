@@ -51,19 +51,24 @@ const loadStyles = async() => {
   console.log('optionsKeys', data.optionsKeys);
   if (data.optionsKeys) {
     const savedPrefs = await chrome.storage.sync.get(JSON.parse(data.optionsKeys));
-    console.log('savedPrefs', savedPrefs);
     Object.assign(styles, savedPrefs);
   }
   return `.captions-overlay-content { \
               --captions-num-lines: 6 !important; \
               --captions-font-size: ${styles.fontSize} !important;\
-              background-color: ${styles.backgroundColor};\
               color: ${styles.fontColor};\
+              font-family: Lexend;\
+          }\
+          \
+          .punch-viewer-container,\
+          .punch-viewer-content { \
+              background: ${styles.backgroundColor} !important;\
           }\
 \
           .punch-viewer-captions-viewer-height-consumer {\
               height: 100% !important;\
-              width: 100% !important;\
+              width: 90% !important;\
+              margin: auto;\
               top: 0 !important;\
               bottom: 0 !important;\
               left: 0 !important;\
