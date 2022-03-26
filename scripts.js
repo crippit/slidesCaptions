@@ -38,13 +38,21 @@ function showReadme(info, tab) {
   chrome.tabs.create({ url });
 }
 
-async function loadStyles() {
+const styles = {
+  fontSize: '50px',
+  fontColor: '#FFFFF',
+  backgroundColor: '#000000',
+  fontFamily: 'default'
+}
+
+const loadStyles = async() => {
   const data = await chrome.storage.sync.get('optionsKeys');
   console.log('optionsKeys', data.optionsKeys);
   if (data.optionsKeys) {
     const savedPrefs = await chrome.storage.sync.get(JSON.parse(data.optionsKeys));
     console.log('savedPrefs', savedPrefs);
-    
+    Object.assign(styles, savedPrefs);
   }
-
+  return styles;
 }
+
