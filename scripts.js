@@ -57,7 +57,6 @@ const loadStyles = async() => {
               --captions-num-lines: 6 !important; \
               --captions-font-size: ${styles.fontSize} !important;\
               color: ${styles.fontColor};\
-              font-family: Lexend;\
           }\
           \
           .punch-viewer-container,\
