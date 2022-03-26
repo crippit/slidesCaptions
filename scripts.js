@@ -11,11 +11,12 @@ chrome.runtime.onStartup.addListener(async () => {
 chrome.action.onClicked.addListener(async (tab) => {
   console.log('tab', tab);
   const title = await chrome.action.getTitle({tabId: tab.id});
+  const css = await loadStyles();
   if (title === 'Click to enable large captions') {
     chrome.scripting.insertCSS(
       {
         target: {tabId: tab.id},
-        files: ["./styles.css"],
+        css: css,
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Large captions are enabled'});
     chrome.action.setBadgeText({text: ('ON')});
@@ -25,7 +26,7 @@ chrome.action.onClicked.addListener(async (tab) => {
     chrome.scripting.removeCSS(
       {
         target: {tabId: tab.id},
-        files: ["./styles.css"],
+        css: css,
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
     chrome.action.setBadgeText({text: ('')});
@@ -53,6 +54,24 @@ const loadStyles = async() => {
     console.log('savedPrefs', savedPrefs);
     Object.assign(styles, savedPrefs);
   }
-  return styles;
+  return `.captions-overlay-content { \
+              --captions-num-lines: 6 !important; \
+              --captions-font-size: ${styles.fontSize} !important;\
+              background-color: ${styles.backgroundColor};\
+              color: ${styles.fontColor};\
+          }\
+\
+          .punch-viewer-captions-viewer-height-consumer {\
+              height: 100% !important;\
+              width: 100% !important;\
+              top: 0 !important;\
+              bottom: 0 !important;\
+              left: 0 !important;\
+              right: 0 !important;\
+          }\
+\
+          .punch-viewer-page-wrapper-container {\
+              height: 0 !important;\
+              width: 0 !important;\
+          }`;
 }
-
