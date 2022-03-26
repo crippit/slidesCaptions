@@ -40,7 +40,7 @@ function showReadme(info, tab) {
 }
 
 const styles = {
-  fontSize: '50px',
+  fontSize: 'xxx-large',
   fontColor: '#FFFFF',
   backgroundColor: '#000000',
   fontFamily: 'default'
