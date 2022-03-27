@@ -27,7 +27,7 @@ chrome.action.onClicked.addListener(async (tab) => {
     chrome.scripting.removeCSS(
       {
         target: {tabId: tab.id},
-        css:css
+        css:css,
         //files: ['styles.css'],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
@@ -56,8 +56,7 @@ const loadStyles = async() => {
     const savedPrefs = await chrome.storage.sync.get(JSON.parse(data.optionsKeys));
     Object.assign(styles, savedPrefs);
   }
-  return `@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');\
-          .captions-overlay-content { \
+  return `.captions-overlay-content { \
               --captions-num-lines: 6 !important; \
               --captions-font-size: ${styles.fontSize} !important;\
               color: ${styles.fontColor};\
