@@ -1,33 +1,60 @@
 <html>
   <head>
+    <style>
+      body {font-family: Sans-serif;}
+      h2 {font-family: Sans-serif;}
+    </style>
     <title>Slides Captions Setting</title>
   </head>
   <body>
     <div>
       <h2>Welcome to Slides Captions</h2>
-
+      <p>To help with readability you can choose from the following options for your Captions:</p>
+      <p>Your choices are saved automatically.</p>
     </div>
 
-    <div style="width: 300px;">
-    <p>Slides Captions forces your Google Slides captions into multiple lines. It only works when the font size is set to Large in Google Slides Caption Settings.</p>
-    <p>To use the extension you must
-      <ul>
-        <li>Ensure that your captions are set to appear at the top and in large text</li>
-        <li>Load your presentation in presentation view, exit full screen and then reload the presentation - alternatively change the end of your URL to /present</li>
-        <li>Toggle your captions on, once the screen is black</li>
-      </ul>
+    <script defer src="options.js"></script>
 
-    </p>
-    <p>The extension will stop your slides from presenting. Disable the extension by clicking below</p>
-    <p>You can re-enable the extension from chrome://extensions</p>
-    </div>
-<br/>
-    <div>
-      <button id="disable">Disable Extension</button>
-    </div>
-    <br/>
-    <p>How to enable - Instructions are in the captions</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/rCDylLmroAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <form id="optionsForm">
+      
+      <div>
+        <label for="fontSize">Caption Size:</label> </br>
+        <select id="fontSize" key="optionsKey">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+          <option value="x-large">Extra Large</option>
+          <option value="xxx-large">Giant</option>
+        </select>
+      </div>
+    </br>
+      <div>
+        <label for="fontColor">Choose your Caption colour:</label> </br>
+        <input type="color" id="fontColor" value="#FFFFFF" key="optionsKey">
+      </div>
+    </br>
+      <div>
+        <label for="backgroundColor">Choose your background colour:</label> </br>
+        <input type="color" id="backgroundColor" value="#000000" key="optionsKey">
+      </div>
+    </br>
+      <div>
+        <label for="fontFamily">Choose your Caption font:</label> </br>
+        <select id="fontFamily" key="optionsKey">
+          <option value="default">Default</option>
+          <option value="Google Sans">Google Sans</option>
+          <!--<option value="Lexend, sans-serif">Lexend</option>-->
+          <option value="serif">Serif</option>
+          <option value="sans-serif">Sans-Serif</option>
+        </select>
+      </div>
+    </br>
+      <div>
+      <label for="lineHeight">Choose your line spacing (100 is regular, 200 is double and 300 is triple)</label></br>
+      <input type="range" min="100" max="300" value="100" id="lineHeight" key="optionsKey">
+     </div>
+    
+    </form>
+   <div id="status"></div>
   </body>
-  <script src="popup.js"></script>
   </html>
