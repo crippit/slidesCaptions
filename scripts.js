@@ -24,10 +24,11 @@ chrome.action.onClicked.addListener(async (tab) => {
   } 
   else {
     //Remove the injected CSS
-    chrome.scripting.insertCSS(
+    chrome.scripting.removeCSS(
       {
         target: {tabId: tab.id},
-        files: ['styles.css'],
+        css:css
+        //files: ['styles.css'],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
     chrome.action.setBadgeText({text: ('')});
