@@ -1,18 +1,23 @@
 .captions-overlay-content {
-    --captions-num-lines: 6 !important;
-    --captions-font-size: 50px !important;
+    --captions-num-lines: 1 !important;
+    --captions-font-size: 4.32vmin !important;
+    color: white;
+    font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
 .punch-viewer-captions-viewer-height-consumer {
-    height: 100% !important;
-    width: 100% !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
+    height: 10% !important;
+    width: 90% !important;
+    top: 90% !important;
+    left: 5% !important;
 }
 
 .punch-viewer-page-wrapper-container {
-    height: 0 !important;
-    width: 0 !important;
+    height: 90% !important;
+    width: 90% !important;
+}
+
+.punch-viewer-container,
+.punch-viewer-content {
+    background: black !important;
 }

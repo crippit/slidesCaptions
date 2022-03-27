@@ -23,10 +23,11 @@ chrome.action.onClicked.addListener(async (tab) => {
     chrome.action.setBadgeBackgroundColor({color: 'green'});
   } 
   else {
-    chrome.scripting.removeCSS(
+    //Remove the injected CSS
+    chrome.scripting.insertCSS(
       {
         target: {tabId: tab.id},
-        css: css,
+        files: ['styles.css'],
       });
     chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
     chrome.action.setBadgeText({text: ('')});
@@ -43,7 +44,7 @@ const styles = {
   fontSize: 'xxx-large',
   fontColor: '#FFFFF',
   backgroundColor: '#000000',
-  fontFamily: 'default'
+  fontFamily: 'sans-serif'
 }
 
 const loadStyles = async() => {
@@ -53,10 +54,12 @@ const loadStyles = async() => {
     const savedPrefs = await chrome.storage.sync.get(JSON.parse(data.optionsKeys));
     Object.assign(styles, savedPrefs);
   }
-  return `.captions-overlay-content { \
+  return `@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');\
+          .captions-overlay-content { \
               --captions-num-lines: 6 !important; \
               --captions-font-size: ${styles.fontSize} !important;\
               color: ${styles.fontColor};\
+              font-family: '${styles.fontFamily}'; !important\
           }\
           \
           .punch-viewer-container,\
