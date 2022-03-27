@@ -44,7 +44,8 @@ const styles = {
   fontSize: 'xxx-large',
   fontColor: '#FFFFF',
   backgroundColor: '#000000',
-  fontFamily: 'sans-serif'
+  fontFamily: 'sans-serif',
+  lineHeight: '100'
 }
 
 const loadStyles = async() => {
@@ -59,7 +60,8 @@ const loadStyles = async() => {
               --captions-num-lines: 6 !important; \
               --captions-font-size: ${styles.fontSize} !important;\
               color: ${styles.fontColor};\
-              font-family: '${styles.fontFamily}'; !important\
+              font-family: '${styles.fontFamily}' !important;\
+              line-height: ${styles.lineHeight}% !important;\
           }\
           \
           .punch-viewer-container,\

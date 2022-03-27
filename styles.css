@@ -3,6 +3,7 @@
     --captions-font-size: 4.32vmin !important;
     color: white;
     font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    line-height: normal;
 }
 
 .punch-viewer-captions-viewer-height-consumer {
