@@ -2,8 +2,8 @@
   "manifest_version": 3,
  
 
-  "name": "Slides Captions Beta",
-  "version": "0.16.0",
+  "name": "Slides Captions",
+  "version": "0.16.1",
   "description": "Make Google Slides Captions Multi Line",
   "options_page": "popup.html",
  
