@@ -70,8 +70,8 @@ const loadStyles = async() => {
           }\
 \
           .punch-viewer-captions-viewer-height-consumer {\
-              height: 100% !important;\
-              width: 90% !important;\
+              height: 80% !important;\
+              width: 80% !important;\
               margin: auto;\
               top: 0 !important;\
               bottom: 0 !important;\
@@ -82,5 +82,9 @@ const loadStyles = async() => {
           .punch-viewer-page-wrapper-container {\
               height: 0 !important;\
               width: 0 !important;\
+          }\
+\
+          .captions-overlay {\
+            align-items: flex-end !important;\
           }`;
 }

@@ -22,3 +22,7 @@
 .punch-viewer-content {
     background: black !important;
 }
+
+.captions-overlay {
+    align-items: flex-end !important;
+}
