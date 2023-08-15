@@ -3,7 +3,7 @@
  
 
   "name": "Slides Captions",
-  "version": "0.16.1",
+  "version": "1.0.0",
   "description": "Make Google Slides Captions Multi Line",
   "options_page": "popup.html",
  
@@ -25,6 +25,12 @@
   
  "host_permissions":[
     "https://docs.google.com/presentation/*"
+  ],
+
+  "web_accessible_resources":[
+    { 
+      "resources": ["banner.html"],
+      "matches":["https://docs.google.com/*"]
+    }
   ]
- 
 }

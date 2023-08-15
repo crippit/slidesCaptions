@@ -12,15 +12,19 @@ chrome.action.onClicked.addListener(async (tab) => {
   console.log('tab', tab);
   const title = await chrome.action.getTitle({tabId: tab.id});
   const css = await loadStyles();
-  if (title === 'Click to enable large captions') {
+  if (title === 'Click to enable full screen captions') {
     chrome.scripting.insertCSS(
       {
         target: {tabId: tab.id},
         css: css,
       });
-    chrome.action.setTitle({tabId: tab.id, title: 'Large captions are enabled'});
+    chrome.action.setTitle({tabId: tab.id, title: 'Full screen captions are enabled'});
     chrome.action.setBadgeText({text: ('ON')});
     chrome.action.setBadgeBackgroundColor({color: 'green'});
+    chrome.scripting.executeScript({
+      target: {tabId: tab.id},
+      func: injectBanner,
+    })
   } 
   else {
     //Remove the injected CSS
@@ -30,7 +34,7 @@ chrome.action.onClicked.addListener(async (tab) => {
         css:css,
         //files: ['styles.css'],
       });
-    chrome.action.setTitle({tabId: tab.id, title: 'Click to enable large captions'});
+    chrome.action.setTitle({tabId: tab.id, title: 'Click to enable full screen captions'});
     chrome.action.setBadgeText({text: ('')});
     chrome.action.setBadgeBackgroundColor({color: 'red'});
   }
@@ -46,7 +50,8 @@ const styles = {
   fontColor: '#FFFFF',
   backgroundColor: '#000000',
   fontFamily: 'sans-serif',
-  lineHeight: '100'
+  lineHeight: '100',
+  numberLines: '6'
 }
 
 const loadStyles = async() => {
@@ -57,7 +62,7 @@ const loadStyles = async() => {
     Object.assign(styles, savedPrefs);
   }
   return `.captions-overlay-content { \
-              --captions-num-lines: 6 !important; \
+              --captions-num-lines: ${styles.numberLines} !important; \
               --captions-font-size: ${styles.fontSize} !important;\
               color: ${styles.fontColor};\
               font-family: '${styles.fontFamily}' !important;\
@@ -87,4 +92,11 @@ const loadStyles = async() => {
           .captions-overlay {\
             align-items: flex-end !important;\
           }`;
+}
+
+function injectBanner() {
+  fetch(chrome.runtime.getURL('/banner.html')).then(r => r.text()).then(html => {
+    document.body.insertAdjacentHTML('beforeend', html);
+    // not using innerHTML as it would break js event listeners of the page
+  });
 }
